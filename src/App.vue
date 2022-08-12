@@ -1,17 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Component1 :boot="c"/>
+    <Component2 :boot="b"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
+import Component1 from "@/components/Component1";
+import Component2 from "@/components/Component2";
+import uutil from "@/uutil";
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Component1,
+    Component2
+  },
+  data() {
+    return {
+      a: uutil.a,
+      b: uutil.a,
+      c: "fsadsf"
+    }
+  },
+  updated() {
+    console.log("Update main")
   }
 }
 </script>
